@@ -3,7 +3,7 @@
         <img ng-src="{{user.avatar_url}}">
     </div>
     <div class="col-sm-6 big" style="color:white">
-        <div ng-if="details">
+        <div ng-hide="details">
         <p><strong>Name:</strong><em><a href="{{getUser()}}">{{getData("name")}}</a></em></p>
         <p><strong>Email:</strong>{{getData("email")}}</p>
         <p><strong>blog:</strong>{{getData("blog")}}</p>
@@ -12,7 +12,7 @@
         <p><strong>Followers:</strong><a href="{{getFollowers()}}">{{getData("followers")}}</a></p>
         <p><strong>Following:</strong>{{getData("following")}}</p>
         </div>
-        <div ng-if="details">
+        <div ng-show="details">
             <div  ng-repeat="user in data"   class="listing " ng-click="openUser(user)">
                 <img id="{{$index}}"  style="height:80px;width:72px" ng-src="{{user.avatar_url}}"  />
                 <strong >{{user.login}}</strong>
