@@ -32,8 +32,8 @@ controller("searchCtrl",function($scope,$http,$location,userService){
     $scope.isUrl="";
     $scope.openUser=function(data){
         userService.userData=data;
-          $scope.isUrl=data.owner.url;
-        $http.get(data.owner.url).
+          $scope.isUrl=data.owner.repos_url;
+        $http.get(data.owner.repos_url).
             success($scope.callBack);
 
         // console.log(userService.userData);
