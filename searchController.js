@@ -29,9 +29,10 @@ controller("searchCtrl",function($scope,$http,$location,userService){
             return clazz;
 
     };
+    $scope.isUrl="";
     $scope.openUser=function(data){
         userService.userData=data;
-        alert(data.owner.url);
+          $scope.isUrl=data.owner.url;
         $http.get(data.owner.url).
             success($scope.callBack);
 
@@ -40,7 +41,7 @@ controller("searchCtrl",function($scope,$http,$location,userService){
     }
     $scope.callBack=function(response){
         userService.metaData=response;
-
+   
         $location.path("/user")
     }
 
