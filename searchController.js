@@ -31,7 +31,7 @@ controller("searchCtrl",function($scope,$http,$location,userService){
     };
     $scope.openUser=function(data){
         userService.userData=data;
-        $http.get(data.url).
+        $http.get(data.owner.url).
             success($scope.callBack);
 
         // console.log(userService.userData);
